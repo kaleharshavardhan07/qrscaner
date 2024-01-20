@@ -1,12 +1,9 @@
-from flask import Flask, render_template
 import cv2
 from pyzbar.pyzbar import decode
 import openpyxl
 from openpyxl import Workbook
 import gspread
 from google.oauth2 import service_account
-
-
 
 def scan_qr_code_camera():
     cap = cv2.VideoCapture(0) 
@@ -46,18 +43,9 @@ def save_to_google_sheet(data, spreadsheet_key='1Zy3x_d4Lrk2v1njIG9LL5-cp3i_a_0P
 
     print(f"Data saved to Google Sheet.")
 
-
-app = Flask(__name__,template_folder='template')
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/scan_and_save')
-def scan_and_save():
+if __name__ == "__main__":
+    print("Scan QR code with the camera.")
     data = scan_qr_code_camera()
-    save_to_google_sheet(data)
-    return f"QR Code scanned successfully! Data saved to Google Sheet."
+    print("QR Code scanned successfully!")
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+    save_to_google_sheet(data)
