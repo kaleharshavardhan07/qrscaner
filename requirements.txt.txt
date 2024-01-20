@@ -1,0 +1,5 @@
+opencv-python==4.5.3
+pyzbar==0.1.8
+openpyxl==3.0.12
+gspread==4.0.1
+google-auth==1.35.0
