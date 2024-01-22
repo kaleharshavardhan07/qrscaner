@@ -1,4 +1,4 @@
-
+apt-get install -y libzbar0
 Werkzeug
 Flask
 qrcode[pil]==7.3
