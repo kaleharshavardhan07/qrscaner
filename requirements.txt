@@ -4,7 +4,7 @@ Flask
 qrcode[pil]==7.3
 Gunicorn
 pyzbar==0.1.8
-zbar==0.23.1
+zbar==0.10
 openpyxl==3.0.10
 numpy==1.23.5
 gspread==4.0.1
